@@ -50,8 +50,6 @@ export class RegisterComponent {
       //const { firstName, lastName, email, phone, password, rePassword } = this.form.value;
       // this.authService.register(firstName!, lastName!, email!, phone!, password!, rePassword!)
       //   .subscribe(res => console.log(res));
-
-
     }
 
 

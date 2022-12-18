@@ -23,11 +23,11 @@
                     <label for="password">Password:</label>
                     <input type="password" formControlName="password" id="password" placeholder="*****">
 
-                    <ng-container *ngIf="form.get('pass')?.get('password')?.touched">
-                        <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">
+                    <ng-container *ngIf="form.get('password')?.touched">
+                        <p class="error" *ngIf="form.get('password')?.errors?.['required']">
                             Password is required!
                         </p>
-                        <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">
+                        <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">
                             Password must be at least 5 characters!
                         </p>
                     </ng-container>
