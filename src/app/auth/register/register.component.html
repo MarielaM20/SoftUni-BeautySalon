@@ -5,29 +5,18 @@
         <form [formGroup]="form" (ngSubmit)="registerHandler()">
             <div class="user-details">
                 <div class="input-box">
-                    <label for="firstName">First name:</label>
-                    <input class="input-error" type="text" formControlName="firstName" id="firstName"
-                        placeholder="Enter your first name...">
+                    <label for="username">Username:</label>
+                    <input class="input-error" type="text" formControlName="username" id="firstName"
+                        placeholder="Enter your username...">
 
-                    <ng-container *ngIf="form.get('firstName')?.touched">
-                        <p class="error" *ngIf="form.get('firstName')?.errors?.['required']">
-                            First name is required!
+                    <ng-container *ngIf="form.get('username')?.touched">
+                        <p class="error" *ngIf="form.get('username')?.errors?.['required']">
+                            Username is required!
                         </p>
                     </ng-container>
 
                 </div>
-                <div class="input-box">
-                    <label for="lastName">Last name:</label>
-                    <input class="input-error" type="text" formControlName="lastName" id="lastName"
-                        placeholder="Enter your last name...">
-
-                    <ng-container *ngIf="form.get('lastName')?.touched">
-                        <p class="error" *ngIf="form.get('lastName')?.errors?.['required']">
-                            Last name is required!
-                        </p>
-                    </ng-container>
-
-                </div>
+        
                 <div class="input-box">
                     <label for="email">Email:</label>
                     <input type="email" formControlName="email" id="email" placeholder="Enter your email...">
@@ -43,21 +32,6 @@
 
                 </div>
 
-                <div class="input-box">
-                    <label for="phone">Phone:</label>
-                    <input type="text" formControlName="phone" id="phone" placeholder="0885 888 888">
-                    
-                    <ng-container *ngIf="form.get('phone')?.touched">
-                        <p class="error" *ngIf="form.get('phone')?.errors?.['required']">
-                            Phone is required!
-                        </p>
-                        <p class="error" *ngIf="form.get('phone')?.errors?.['minlength'] || form.get('phone')?.errors?.['maxlength']">
-                            Invalid phone number!
-                        </p>
-                    </ng-container>
-
-
-                </div>
                 <ng-container formGroupName="pass">
                     <div class="input-box">
                         <label for="password">Password:</label>

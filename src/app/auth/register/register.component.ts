@@ -13,10 +13,8 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent {
 
   form = this.fb.group({
-    firstName: ['', [Validators.required, Validators.minLength(5)]],
-    lastName: ['', [Validators.required, Validators.minLength(5)]],
+    username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, emailValidator(['bg', 'com'])]],
-    phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
     pass: this.fb.group({
       password: ['', [Validators.required, Validators.minLength(5)]],
       rePassword: ['', [Validators.required, Validators.minLength(5)]]
@@ -37,10 +35,8 @@ export class RegisterComponent {
       }
 
       this.authService.user = {
-        firstName: 'Mariela',
-        lastName: "Mircheva",
-        email: "m.mircheva02@gmail.com",
-        phone: "0888123456",
+        username: 'Mariela',
+        email: "m.mircheva02@gmail.com"
       } as any;
 
       const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';

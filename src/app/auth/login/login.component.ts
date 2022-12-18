@@ -26,10 +26,8 @@ export class LoginComponent {
     }
 
     this.authService.user = {
-      firstName: 'Mariela',
-      lastName: "Mircheva",
-      email: "m.mircheva02@gmail.com",
-      phone: "0888123456",
+      username: 'Mariela',
+      email: "m.mircheva02@gmail.com"
     } as any;
 
     const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';

@@ -16,10 +16,10 @@ export class ProfileComponent {
       return;
     }
 
-    const { firstName, lastName, email, phone } = this.formData.value;
+    const { username, email } = this.formData.value;
 
     this.authService.user = {
-      firstName, lastName, email, phone
+      username, email
     } as any;
 
     this.router.navigate(['/views/appointmentMessage']);
@@ -35,20 +35,16 @@ export class ProfileComponent {
   showEditMode = false;
 
   get user() {
-    const { firstName, lastName, email, phone } = this.authService.user!;
+    const { username, email} = this.authService.user!;
     return {
-      firstName,
-      lastName,
-      email,
-      phone
+      username,
+      email
     };
   }
 
   formData = this.fb.group({
-    firstName: ['', [Validators.required]],
-    lastName: ['', [Validators.required]],
+    username: ['', [Validators.required]],
     email: ['', [Validators.required, emailValidator(['bg', 'com'])]],
-    phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
   })
 
   constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
@@ -63,10 +59,10 @@ export class ProfileComponent {
       return;
     }
 
-    const { firstName, lastName, email, phone } = this.formData.value;
+    const { username, email } = this.formData.value;
 
     this.authService.user = {
-      firstName, lastName, email, phone
+      username, email
     } as any;
 
     this.toggleEditMode();

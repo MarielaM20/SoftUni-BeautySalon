@@ -2,28 +2,17 @@
     <h3 class="title2">Your profile:</h3>
     <form [formGroup]="formData" (ngSubmit)="saveProfile()">
         <img src="../../../assets/Images/profile.png" alt="default user">
-        <p>First name:
-            <input *ngIf="showEditMode" type="text" formControlName="firstName">
+        <p>Username:
+            <input *ngIf="showEditMode" type="text" formControlName="username">
             <ng-container *ngIf="!showEditMode">
-                {{user.firstName}}
+                {{user.username}}
             </ng-container>
         </p>
-        <p>Last name:
-            <input *ngIf="showEditMode" type="text" formControlName="lastName">
-            <ng-container *ngIf="!showEditMode">
-                {{user.lastName}}
-            </ng-container>
-        </p>
+        
         <p>Email:
             <input *ngIf="showEditMode" type="text" formControlName="email">
             <ng-container *ngIf="!showEditMode">
                 {{user.email}}
-            </ng-container>
-        </p>
-        <p>Phone:
-            <input *ngIf="showEditMode" type="text" formControlName="phone">
-            <ng-container *ngIf="!showEditMode">
-                {{user.phone}}
             </ng-container>
         </p>
 

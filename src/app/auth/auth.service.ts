@@ -19,10 +19,8 @@ export class AuthService {
   //user: IUser | null = null;
 
   user: IUser | null = {
-    firstName: "Mariela",
-    lastName: "Mircheva",
-    email: "m.mircheva02@gmail.com",
-    phone: "0888123456"
+    username: "Mariela",
+    email: "m.mircheva02@gmail.com"
   }
   constructor(private fireauth: AngularFireAuth, private router: Router) { }
 
