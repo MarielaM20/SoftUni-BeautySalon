@@ -1,0 +1,46 @@
+<section class="form1">
+    <div class="container">
+        <h2 class="title2">Login</h2>
+
+        <form [formGroup]="form" (ngSubmit)="loginHandler()">
+            <div class="user-details">
+                <div class="input-box">
+                    <label for="email">Email:</label>
+                    <input type="email" formControlName="email" id="email" placeholder="Enter your email...">
+
+                    <ng-container *ngIf="form.get('email')?.touched">
+                        <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+                            Email is required!
+                        </p>
+                        <p class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">
+                            Email is not valid!
+                        </p>
+                    </ng-container>
+
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Password:</label>
+                    <input type="password" formControlName="password" id="password" placeholder="*****">
+
+                    <ng-container *ngIf="form.get('pass')?.get('password')?.touched">
+                        <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">
+                            Password is required!
+                        </p>
+                        <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">
+                            Password must be at least 5 characters!
+                        </p>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="input-box1">
+                <p>You still haven't an account? <a routerLink="/auth/register">Register</a></p>
+            </div>
+
+            <div class="button">
+                <input [disabled]="form.invalid" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</section>
